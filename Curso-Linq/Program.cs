@@ -24,6 +24,12 @@ internal class Program
         //ImprimirValores(queries.LibrosDespuesDel2000());
 
         //* Libros con más de 250 páginas y el título contiene 'in Action'
-        ImprimirValores(queries.MasDe250PaginasYTituloContieneInAction());
+        //ImprimirValores(queries.MasDe250PaginasYTituloContieneInAction());
+
+        //* Todos los libros tienen Status
+        //Console.WriteLine($"¿Todos los libros tienen status? {queries.TodosLosLibrosTienenStatus()}");
+
+        //* Al menos 1 libro fue publicado en 2005
+        Console.WriteLine($"¿Al menos un libro fue publicado en 2005?: {queries.LibroPublicadoEnAnio(2005)}");
     }
 }

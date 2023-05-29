@@ -35,5 +35,15 @@
                         && book.Title.Contains("in Action")
                         select book;
         }
+
+        public bool TodosLosLibrosTienenStatus()
+        {
+            return librosCollection.All(book => book.Status != String.Empty);
+        }
+
+        public bool LibroPublicadoEnAnio(int year)
+        {
+            return librosCollection.Any(book => book.PublishedDate.Year == year);
+        }
     }
 }
