@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Curso_Linq
+﻿namespace Curso_Linq
 {
     internal class LinqQueries
     {
@@ -21,6 +15,25 @@ namespace Curso_Linq
         public IEnumerable<Book> TodaLaColeccion()
         {
             return librosCollection;
+        }
+
+        public IEnumerable<Book> LibrosDespuesDel2000()
+        {
+            //* extension method
+            //return librosCollection.Where(book => book.PublishedDate.Year > 2000);
+
+            //* query expression
+            return from book in librosCollection where book.PublishedDate.Year > 2000 select book;
+        }
+
+        public IEnumerable<Book> MasDe250PaginasYTituloContieneInAction()
+        {
+            //return librosCollection.Where(book => book.PageCount > 250 && book.Title.Contains("in Action"));
+
+            return from book in librosCollection
+                        where book.PageCount > 250
+                        && book.Title.Contains("in Action")
+                        select book;
         }
     }
 }

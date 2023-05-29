@@ -17,6 +17,13 @@ internal class Program
             }
         }
 
-        ImprimirValores(queries.TodaLaColeccion());
+        //* Toda la colección
+        //ImprimirValores(queries.TodaLaColeccion());
+
+        //* Libros después del 2000
+        //ImprimirValores(queries.LibrosDespuesDel2000());
+
+        //* Libros con más de 250 páginas y el título contiene 'in Action'
+        ImprimirValores(queries.MasDe250PaginasYTituloContieneInAction());
     }
 }
