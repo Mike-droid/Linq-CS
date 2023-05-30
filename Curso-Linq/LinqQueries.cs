@@ -3,6 +3,7 @@
     internal class LinqQueries
     {
         private List<Book> librosCollection = new List<Book>();
+
         public LinqQueries()
         {
             using (StreamReader reader = new StreamReader("books.json"))
@@ -69,6 +70,30 @@
         public IEnumerable<Book> LibroPosicionMasDeXPaginas(int takeValue, int skipValue, int pageQuantity)
         {
             return librosCollection.Where(book => book.PageCount > pageQuantity).Take(takeValue).Skip(skipValue);
+        }
+    }
+
+    internal class LinqQueriesItems
+    {
+
+        private List<Item> items = new List<Item>();
+        public LinqQueriesItems()
+        {
+            using (StreamReader reader = new StreamReader("books.json"))
+            {
+                string json = reader.ReadToEnd();
+                this.items = System.Text.Json.JsonSerializer.Deserialize<List<Item>>(json, new System.Text.Json.JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+            }
+        }
+
+        public IEnumerable<Item> PrimerosXLibros(int quantity)
+        {
+            return items.Take(quantity)
+                .Select(book => new Item()
+                {
+                    Title = book.Title,
+                    PageCount = book.PageCount
+                });
         }
     }
 }

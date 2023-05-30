@@ -4,16 +4,28 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        LinqQueries queries = new LinqQueries();
+        LinqQueries queries = new();
+        LinqQueriesItems items = new();
 
-        string formatoTexto = "{0, -60} {1, 15} {2, 15}";
+        string formatoTextoLibro = "{0, -60} {1, 15} {2, 15}";
 
         void ImprimirValores(IEnumerable<Book> listaDeLibros)
         {
-            Console.WriteLine($"{formatoTexto}\n", "Titulo", "N. Paginas", "Fecha publicacion");
+            Console.WriteLine($"{formatoTextoLibro}\n", "Titulo", "N. Paginas", "Fecha publicacion");
             foreach (var book in listaDeLibros)
             {
-                Console.WriteLine($"{formatoTexto}", book.Title, book.PageCount, book.PublishedDate.ToShortDateString());
+                Console.WriteLine($"{formatoTextoLibro}", book.Title, book.PageCount, book.PublishedDate.ToShortDateString());
+            }
+        }
+
+        string formatoTextoItem = "{0, -60} {1, 15}";
+
+        void ImprimirItems(IEnumerable<Item> listaDeItems)
+        {
+            Console.WriteLine($"{formatoTextoItem}\n", "Titulo", "N. Paginas");
+            foreach (var book in listaDeItems)
+            {
+                Console.WriteLine($"{formatoTextoItem}", book.Title, book.PageCount);
             }
         }
 
@@ -45,6 +57,9 @@ internal class Program
         //ImprimirValores(queries.PrimerosLibrosRecientesCategorizados(3, "Java"));
 
         //* Tercer y cuarto libro con más de 400 páginas
-        ImprimirValores(queries.LibroPosicionMasDeXPaginas(4, 2, 400));
+        //ImprimirValores(queries.LibroPosicionMasDeXPaginas(4, 2, 400));
+
+        //* Primeros X libros filtadros con Select
+        ImprimirItems(items.PrimerosXLibros(3));
     }
 }
