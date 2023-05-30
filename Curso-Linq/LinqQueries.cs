@@ -71,6 +71,11 @@
         {
             return librosCollection.Where(book => book.PageCount > pageQuantity).Take(takeValue).Skip(skipValue);
         }
+
+        public int CantidadLibrosEntreXYPaginas(int limiteInferior, int limiteSuperior)
+        {
+            return librosCollection.Count(book => book.PageCount >= limiteInferior && book.PageCount <= limiteSuperior);
+        }
     }
 
     internal class LinqQueriesItems

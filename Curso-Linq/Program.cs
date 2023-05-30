@@ -60,6 +60,9 @@ internal class Program
         //ImprimirValores(queries.LibroPosicionMasDeXPaginas(4, 2, 400));
 
         //* Primeros X libros filtadros con Select
-        ImprimirItems(items.PrimerosXLibros(3));
+        //ImprimirItems(items.PrimerosXLibros(3));
+
+        //* Cantidad de libros entre 200 y 500 páginas
+        Console.WriteLine($"Cantidad de libros entre 200 y 500 páginas: {queries.CantidadLibrosEntreXYPaginas(200, 500)}");
     }
 }
