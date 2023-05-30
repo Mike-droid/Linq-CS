@@ -50,5 +50,15 @@
         {
             return librosCollection.Where(book => book.Categories.Contains(text));
         }
+
+        public IEnumerable<Book> LibrosDeLenguajeProgramacionPorNombreAscendente(string programmingLanguage)
+        {
+            return librosCollection.Where(book => book.Categories.Contains(programmingLanguage)).OrderBy(book => book.Title);
+        }
+
+        public IEnumerable<Book> LibrosMasDeXPaginasDescendente(int pages)
+        {
+            return librosCollection.Where(book => book.PageCount > pages).OrderByDescending(book => book.PageCount);
+        }
     }
 }

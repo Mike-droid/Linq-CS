@@ -33,6 +33,12 @@ internal class Program
         //Console.WriteLine($"¿Al menos un libro fue publicado en 2005?: {queries.LibroPublicadoEnAnio(2005)}");
 
         //* Libros de Python
-        ImprimirValores(queries.LibrosDeCategoria("Python"));
+        //ImprimirValores(queries.LibrosDeCategoria("Python"));
+
+        //* Libros de Java - Ordenados por nombre
+        //ImprimirValores(queries.LibrosDeLenguajeProgramacionPorNombreAscendente("Java"));
+
+        //* Libros de Java - Ordenados por nombre descendente
+        ImprimirValores(queries.LibrosMasDeXPaginasDescendente(450));
     }
 }
