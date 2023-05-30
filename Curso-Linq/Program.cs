@@ -30,6 +30,9 @@ internal class Program
         //Console.WriteLine($"¿Todos los libros tienen status? {queries.TodosLosLibrosTienenStatus()}");
 
         //* Al menos 1 libro fue publicado en 2005
-        Console.WriteLine($"¿Al menos un libro fue publicado en 2005?: {queries.LibroPublicadoEnAnio(2005)}");
+        //Console.WriteLine($"¿Al menos un libro fue publicado en 2005?: {queries.LibroPublicadoEnAnio(2005)}");
+
+        //* Libros de Python
+        ImprimirValores(queries.LibrosDeCategoria("Python"));
     }
 }

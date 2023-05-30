@@ -45,5 +45,10 @@
         {
             return librosCollection.Any(book => book.PublishedDate.Year == year);
         }
+
+        public IEnumerable<Book> LibrosDeCategoria(string text)
+        {
+            return librosCollection.Where(book => book.Categories.Contains(text));
+        }
     }
 }
