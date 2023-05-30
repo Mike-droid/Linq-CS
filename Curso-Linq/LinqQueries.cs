@@ -60,5 +60,15 @@
         {
             return librosCollection.Where(book => book.PageCount > pages).OrderByDescending(book => book.PageCount);
         }
+
+        public IEnumerable<Book> PrimerosLibrosRecientesCategorizados(int quantity, string category)
+        {
+            return librosCollection.Where(book => book.Categories.Contains(category)).OrderByDescending(book => book.PublishedDate).Take(quantity);
+        }
+
+        public IEnumerable<Book> LibroPosicionMasDeXPaginas(int takeValue, int skipValue, int pageQuantity)
+        {
+            return librosCollection.Where(book => book.PageCount > pageQuantity).Take(takeValue).Skip(skipValue);
+        }
     }
 }

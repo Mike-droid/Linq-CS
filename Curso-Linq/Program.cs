@@ -39,6 +39,12 @@ internal class Program
         //ImprimirValores(queries.LibrosDeLenguajeProgramacionPorNombreAscendente("Java"));
 
         //* Libros de Java - Ordenados por nombre descendente
-        ImprimirValores(queries.LibrosMasDeXPaginasDescendente(450));
+        //ImprimirValores(queries.LibrosMasDeXPaginasDescendente(450));
+
+        //* Primeros 3 libros con fecha de publicación más reciente categorizados en Java
+        //ImprimirValores(queries.PrimerosLibrosRecientesCategorizados(3, "Java"));
+
+        //* Tercer y cuarto libro con más de 400 páginas
+        ImprimirValores(queries.LibroPosicionMasDeXPaginas(4, 2, 400));
     }
 }
