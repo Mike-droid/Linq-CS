@@ -66,10 +66,18 @@ internal class Program
         //Console.WriteLine($"Cantidad de libros entre 200 y 500 páginas: {queries.CantidadLibrosEntreXYPaginas(200, 500)}");
 
         //* Fecha de publicación más antigüa
-        Console.WriteLine($"Fecha de publicación más antigüa: {queries.FechaDePublicacionMenor()}");
+        //Console.WriteLine($"Fecha de publicación más antigüa: {queries.FechaDePublicacionMenor()}");
 
         //* Cantidad mayor de páginas
-        Console.WriteLine($"El libro con la mayor cantidad de páginas tiene: {queries.MayorCantidadPaginas()} páginas");
+        //Console.WriteLine($"El libro con la mayor cantidad de páginas tiene: {queries.MayorCantidadPaginas()} páginas");
+
+        //* Libro con menor número de páginas
+        var libroMenosPaginas = queries.LibroConMenorNumeroDePaginas();
+        Console.WriteLine($"Libro con menor número de páginas: {libroMenosPaginas.Title} - Páginas: {libroMenosPaginas.PageCount}");
+
+        //* Libro más reciente
+        var libroMasReciente = queries.LibroMasReciente();
+        Console.WriteLine($"Libro más reciente: {libroMasReciente.Title} - Fecha: {libroMasReciente.PublishedDate}");
 
     }
 }

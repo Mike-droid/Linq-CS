@@ -86,6 +86,16 @@
         {
             return librosCollection.Max(book => book.PageCount);
         }
+
+        public Book? LibroConMenorNumeroDePaginas() //* protección de retorno null
+        {
+            return librosCollection.Where(book => book.PageCount > 0).MinBy(book => book.PageCount);
+        }
+
+        public Book? LibroMasReciente() //* protección de retorno null
+        {
+            return librosCollection.MaxBy(book => book.PublishedDate);
+        }
     }
 
     internal class LinqQueriesItems
