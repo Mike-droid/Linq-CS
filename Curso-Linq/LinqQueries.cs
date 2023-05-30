@@ -96,6 +96,30 @@
         {
             return librosCollection.MaxBy(book => book.PublishedDate);
         }
+
+        public int SumaDeTodasLasPaginasLbirosEntreXY(int limiteInferior, int limiteSuperior)
+        {
+            return librosCollection.Where(book => book.PageCount >= limiteInferior && book.PageCount <= limiteSuperior).Sum(book => book.PageCount);
+        }
+
+        public string LibrosDespuesDeAnioConcatedos(int anio)
+        {
+            return librosCollection
+                .Where(book => book.PublishedDate.Year > anio)
+                .Aggregate("", (TitulosLibros, next) =>
+                    {
+                        if(TitulosLibros != string.Empty)
+                        {
+                            TitulosLibros += " - " + next.Title;
+                        }
+                        else
+                        {
+                            TitulosLibros += next.Title;
+                        }
+                        return TitulosLibros;
+                    }
+                );
+        }
     }
 
     internal class LinqQueriesItems

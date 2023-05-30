@@ -72,12 +72,18 @@ internal class Program
         //Console.WriteLine($"El libro con la mayor cantidad de páginas tiene: {queries.MayorCantidadPaginas()} páginas");
 
         //* Libro con menor número de páginas
-        var libroMenosPaginas = queries.LibroConMenorNumeroDePaginas();
-        Console.WriteLine($"Libro con menor número de páginas: {libroMenosPaginas.Title} - Páginas: {libroMenosPaginas.PageCount}");
+        //var libroMenosPaginas = queries.LibroConMenorNumeroDePaginas();
+        //Console.WriteLine($"Libro con menor número de páginas: {libroMenosPaginas.Title} - Páginas: {libroMenosPaginas.PageCount}");
 
         //* Libro más reciente
-        var libroMasReciente = queries.LibroMasReciente();
-        Console.WriteLine($"Libro más reciente: {libroMasReciente.Title} - Fecha: {libroMasReciente.PublishedDate}");
+        //var libroMasReciente = queries.LibroMasReciente();
+        //Console.WriteLine($"Libro más reciente: {libroMasReciente.Title} - Fecha: {libroMasReciente.PublishedDate}");
+
+        //* Suma de páginas de libros entre 0 y 500
+        //Console.WriteLine($"Suma total de páginas {queries.SumaDeTodasLasPaginasLbirosEntreXY(0,500)}");
+
+        //* Libros publicados después del 2015
+        Console.WriteLine($"Libros publicados después del 2015: {queries.LibrosDespuesDeAnioConcatedos(2015)}");
 
     }
 }
