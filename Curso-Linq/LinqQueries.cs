@@ -76,6 +76,16 @@
         {
             return librosCollection.Count(book => book.PageCount >= limiteInferior && book.PageCount <= limiteSuperior);
         }
+
+        public DateTime FechaDePublicacionMenor()
+        {
+            return librosCollection.Min(book => book.PublishedDate);
+        }
+
+        public int MayorCantidadPaginas()
+        {
+            return librosCollection.Max(book => book.PageCount);
+        }
     }
 
     internal class LinqQueriesItems

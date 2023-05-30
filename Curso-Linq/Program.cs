@@ -63,6 +63,13 @@ internal class Program
         //ImprimirItems(items.PrimerosXLibros(3));
 
         //* Cantidad de libros entre 200 y 500 páginas
-        Console.WriteLine($"Cantidad de libros entre 200 y 500 páginas: {queries.CantidadLibrosEntreXYPaginas(200, 500)}");
+        //Console.WriteLine($"Cantidad de libros entre 200 y 500 páginas: {queries.CantidadLibrosEntreXYPaginas(200, 500)}");
+
+        //* Fecha de publicación más antigüa
+        Console.WriteLine($"Fecha de publicación más antigüa: {queries.FechaDePublicacionMenor()}");
+
+        //* Cantidad mayor de páginas
+        Console.WriteLine($"El libro con la mayor cantidad de páginas tiene: {queries.MayorCantidadPaginas()} páginas");
+
     }
 }
