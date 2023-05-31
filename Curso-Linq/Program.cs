@@ -83,7 +83,13 @@ internal class Program
         //Console.WriteLine($"Suma total de páginas {queries.SumaDeTodasLasPaginasLbirosEntreXY(0,500)}");
 
         //* Libros publicados después del 2015
-        Console.WriteLine($"Libros publicados después del 2015: {queries.LibrosDespuesDeAnioConcatedos(2015)}");
+        //Console.WriteLine($"Libros publicados después del 2015: {queries.LibrosDespuesDeAnioConcatedos(2015)}");
+
+        //* Promedio de caracteres de los títulos de los libros
+        Console.WriteLine($"Promedio de caracteres de títulos: {queries.PromedioCaracteresTitulosLibros()}");
+
+        //* Promedio de páginas de los libros
+        Console.WriteLine($"Promedio de páginas de los libros: {queries.PromedioPaginasLibros()}");
 
     }
 }

@@ -120,6 +120,16 @@
                     }
                 );
         }
+
+        public double PromedioCaracteresTitulosLibros()
+        {
+            return librosCollection.Average(book => book.Title.Length);
+        }
+
+        public double PromedioPaginasLibros()
+        {
+            return librosCollection.Where(book => book.PageCount > 0).Average(book => book.PageCount);
+        }
     }
 
     internal class LinqQueriesItems
