@@ -135,6 +135,11 @@
         {
             return librosCollection.Where(book => book.PublishedDate.Year >= anio).OrderBy(book => book.PublishedDate).GroupBy(book => book.PublishedDate.Year);
         }
+
+        public ILookup<char, Book> DiccionarioDeLibrosPorLetra()
+        {
+            return librosCollection.ToLookup(book => book.Title[0], book => book);
+        }
     }
 
     internal class LinqQueriesItems
