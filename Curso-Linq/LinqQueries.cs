@@ -130,6 +130,11 @@
         {
             return librosCollection.Where(book => book.PageCount > 0).Average(book => book.PageCount);
         }
+
+        public IEnumerable<IGrouping<int, Book>> LibrosAPartirDeAnioAgrupadosPorAnio(int anio)
+        {
+            return librosCollection.Where(book => book.PublishedDate.Year >= anio).OrderBy(book => book.PublishedDate).GroupBy(book => book.PublishedDate.Year);
+        }
     }
 
     internal class LinqQueriesItems

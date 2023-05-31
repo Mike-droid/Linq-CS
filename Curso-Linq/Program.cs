@@ -29,6 +29,20 @@ internal class Program
             }
         }
 
+        void ImprimirGrupo(IEnumerable<IGrouping<int, Book>> ListadeLibros)
+        {
+            foreach (var grupo in ListadeLibros)
+            {
+                Console.WriteLine("");
+                Console.WriteLine($"Grupo: {grupo.Key}");
+                Console.WriteLine("{0,-60} {1, 15} {2, 15}\n", "Titulo", "N. Paginas", "Fecha publicacion");
+                foreach (var item in grupo)
+                {
+                    Console.WriteLine("{0,-60} {1, 15} {2, 15}", item.Title, item.PageCount, item.PublishedDate.Date.ToShortDateString());
+                }
+            }
+        }
+
         //* Toda la colección
         //ImprimirValores(queries.TodaLaColeccion());
 
@@ -86,10 +100,12 @@ internal class Program
         //Console.WriteLine($"Libros publicados después del 2015: {queries.LibrosDespuesDeAnioConcatedos(2015)}");
 
         //* Promedio de caracteres de los títulos de los libros
-        Console.WriteLine($"Promedio de caracteres de títulos: {queries.PromedioCaracteresTitulosLibros()}");
+        //Console.WriteLine($"Promedio de caracteres de títulos: {queries.PromedioCaracteresTitulosLibros()}");
 
         //* Promedio de páginas de los libros
-        Console.WriteLine($"Promedio de páginas de los libros: {queries.PromedioPaginasLibros()}");
+        //Console.WriteLine($"Promedio de páginas de los libros: {queries.PromedioPaginasLibros()}");
 
+        //* Libros publicados a partir del 2000 agrupados por año
+        ImprimirGrupo(queries.LibrosAPartirDeAnioAgrupadosPorAnio(2000));
     }
 }
