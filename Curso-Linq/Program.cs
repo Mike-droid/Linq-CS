@@ -121,7 +121,10 @@ internal class Program
         //ImprimirGrupo(queries.LibrosAPartirDeAnioAgrupadosPorAnio(2000));
 
         // Diccionario de libros agrupados por primera letra del título
-        var diccionarioLookup = queries.DiccionarioDeLibrosPorLetra();
-        PrintDictionary(diccionarioLookup, 'P');
+        //var diccionarioLookup = queries.DiccionarioDeLibrosPorLetra();
+        //PrintDictionary(diccionarioLookup, 'P');
+
+        //* Libros filtrados con la clausula JOIN
+        ImprimirValores(queries.LibrosDespuesDeAnioConMasDeXPaginas(2005, 500));
     }
 }

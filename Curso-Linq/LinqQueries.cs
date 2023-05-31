@@ -140,6 +140,15 @@
         {
             return librosCollection.ToLookup(book => book.Title[0], book => book);
         }
+
+        public IEnumerable<Book> LibrosDespuesDeAnioConMasDeXPaginas(int anio, int paginas)
+        {
+            var librosDespuesDelAnio = librosCollection.Where(book => book.PublishedDate.Year > anio);
+
+            var librosConMasDeXPaginas = librosCollection.Where(book => book.PageCount > paginas);
+
+            return librosDespuesDelAnio.Join(librosConMasDeXPaginas, book => book.Title, book2 => book2.Title, (book, book2) => book);
+        }
     }
 
     internal class LinqQueriesItems
